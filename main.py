@@ -1,9 +1,13 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
 
+import os
+
+api_key = os.environ.get('OPENAI_API_KEY')
+
+
 app = Flask(__name__)
 
-api_key = OPENAI_API_KEY
 client = OpenAI(api_key=api_key)
 
 def generate_response(prompt):
